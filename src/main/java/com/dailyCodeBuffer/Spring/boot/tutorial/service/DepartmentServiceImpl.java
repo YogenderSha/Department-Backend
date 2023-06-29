@@ -55,6 +55,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 		return departmentRepository.save(dpDB);
 		
 	}
+	@Override
+	public Department fetchDepartmentByName(String deptName) throws DepartmentNotFoundException {
+    Optional<Department> department= departmentRepository.findDepartmentBydeptName(deptName);
+    if(!department.isPresent()) {
+		throw new DepartmentNotFoundException("Department Not Available");
+	}
 	
-
+	return department.get();
+		
+	}
 }

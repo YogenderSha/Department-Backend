@@ -16,5 +16,7 @@ public interface DepartmentService {
 	
 	public Department updateDept(Long id,Department updatedDept);
 
+	public Department fetchDepartmentByName(String departmentName) throws DepartmentNotFoundException;
+
 
 }

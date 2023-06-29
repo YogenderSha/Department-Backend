@@ -1,5 +1,6 @@
 package com.dailyCodeBuffer.Spring.boot.tutorial.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +17,13 @@ public class Department {
 	private long deptID;
 	
 	@NotBlank(message="Please add Department Name")
+	@Column
 	private String deptName;
+	
+	@Column
 	private String deptAddress;
+	
+	@Column
 	private String DeptCode;
 
 	public long getDeptID() {
